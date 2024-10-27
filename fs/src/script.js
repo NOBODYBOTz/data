@@ -235,23 +235,23 @@ const controls = [
     'fullscreen'
 ];
 document.addEventListener('DOMContentLoaded', () => {
-  const player = Plyr.setup('.player', { controls });
+    const player = Plyr.setup('.player', { controls });
 
-  const audioTrackSelector = document.getElementById('audio-track-selector');
-  const videoPlayer = document.getElementById('player');
+    const audioTrackSelector = document.getElementById('audio-track-selector');
+    const videoPlayer = document.getElementById('player');
 
-  const audioTracks = videoPlayer.audioTracks;
+    const audioTracks = videoPlayer.audioTracks;
 
   audioTracks.forEach((track, index) => {
     const option = document.createElement('option');
     option.value = index;
     option.text = track.label || `Audio Track ${index + 1}`;
     audioTrackSelector.appendChild(option);
-  });
+});
 
   audioTrackSelector.addEventListener('change', (e) => {
     videoPlayer.audioTracks.selectedIndex = e.target.value;
-  });
+});
 });
 
 // disabling right click
